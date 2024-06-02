@@ -13,7 +13,9 @@ export const postRegister = async (req, res) => {
 		//Machine　をデータベースに保存
 		const machineSaved = await newMachine.save();
 
-		res.render("machine/registered", { machineSaved, user: req.user });
+		res.locals.user = req.user;
+
+		res.render("machine/registered", { machineSaved });
 	} catch (error) {
 		console.log(
 			"------------MachineをDB登録のエラーが発生しています------------"

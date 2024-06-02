@@ -32,8 +32,11 @@ export const postRegister = async (req, res) => {
 			level3,
 		});
 
+		res.locals.user = req.user;
+		res.locals.userFound = userSaved;
+
 		//クッキーにトークンを保存
-		res.cookie("token", token);
+		//res.cookie("token", token);
 		res.render("user/registered", {
 			firstName,
 			lastName,

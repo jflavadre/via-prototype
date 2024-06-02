@@ -7,6 +7,6 @@ const router = Router();
 
 router.get("/search", validateToken, controller.getSearch);
 router.get("/register", validateToken, controller.getRegister);
-router.post("/register", controller.postRegister);
+router.post("/register", validateToken, controller.postRegister);
 
 export default router;
