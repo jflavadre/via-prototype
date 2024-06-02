@@ -1,0 +1,36 @@
+<div class="container my-5">
+    {{#if badToken}}
+        <div class="text-center text-danger">トークンに問題があります</div>
+    {{/if}}
+    <div class="row">
+        <div class="d-none d-sm-block col-md-2 col-lg-4"></div>
+        <div class="col">
+            <form action="/user/login" method="post">
+                <div class="text-center my-5 text-white fs-5">社員用ログイン</div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <input type="number" name="userCompanyID" class="form-control" />
+                    <label class="form-label">社員登録ID</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <input type="password" name="password" class="form-control" />
+                    <label class="form-label">パスワード</label>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">ログイン</button>
+
+
+                <div class="text-center my-3">
+                    <!-- Simple link -->
+                    <a href="#!">ログインできませんか?</a>
+                </div>
+            </form>
+        </div>
+        <div class="d-none d-sm-block col-md-2 col-lg-4"></div>
+    </div>
+</div>
+<div class="d-block d-sm-none my-5 py-5"></div>
