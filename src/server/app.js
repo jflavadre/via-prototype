@@ -13,7 +13,7 @@ import "dotenv/config";
 // routes関係をインポート
 import homeRoutes from "../home/routes/index.js";
 import userRoutes from "../user/routes/index.js";
-import machineRoutes from "../machine/routes/index.js";
+import machineRoutes from "../machine/routes/machineRoute.js";
 
 const app = express();
 
@@ -37,8 +37,6 @@ app.engine(
 app.set("view engine", ".hbs");
 app.set("views", __viewsPath);
 
-
-
 // src/public 静的ファイルの設定
 app.use(express.static(__publicPath));
 
@@ -47,9 +45,14 @@ app.use("/", homeRoutes);
 app.use("/user", userRoutes);
 app.use("/machine", machineRoutes);
 
+// Test version
+app.use("/probandoversion", (req, res) => {
+	return res.json({ message: "probando la web" });
+});
+
 // Global Variables
 app.use((req, res, next) => {
-    console.log("-- Global Variables --")
+	console.log("-- Global Variables --");
 	next();
 });
 

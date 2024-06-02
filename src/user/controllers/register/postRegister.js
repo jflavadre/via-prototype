@@ -20,8 +20,17 @@ export const postRegister = async (req, res) => {
 		});
 		//User　をデータベースに保存
 		const userSaved = await newUser.save();
+
+		let level3;
+		if (userSaved.level === 3) {
+			level3 = true;
+		}
 		//tokenを生成
-		const token = await createAccessToken({ id: userSaved._id });
+		const token = await createAccessToken({
+			id: userSaved._id,
+			firstName: userSaved.firstName,
+			level3,
+		});
 
 		//クッキーにトークンを保存
 		res.cookie("token", token);

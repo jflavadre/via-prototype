@@ -6,9 +6,9 @@ import { validateToken } from "../../middlewares/validateToken.js";
 
 const router = Router();
 
-router.get("/register", controller.getRegister);
+router.get("/register", validateToken, controller.getRegister);
 
-router.post("/register", controller.postRegister);
+router.post("/register", validateToken, controller.postRegister);
 
 router.post("/login", controller.postLogin);
 

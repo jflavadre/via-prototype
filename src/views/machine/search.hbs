@@ -1,7 +1,38 @@
 <div class="container">
-    <h1 class="p-5">機械</h1>
-    {{user.firstName}}
-    <div class="p-5">
-        <a href="/user/profile">Profile</a>
+    <div class="row py-3">
+        {{!-- Search Bar --}}
+        <form class="mx-auto" action="/machine/search" method="GET" style="max-width: 500px;"
+            onsubmit="reloadAllProducts()">
+            <div class="input-group my-4">
+                <input type="text" class="form-control" placeholder="製番WBSを入力">
+                <button class="btn btn-primary" type="button">検索</button>
+            </div>
+        </form>
     </div>
+    <div class="table-responsive">
+        <table class="table table-hover text-center">
+            <thead>
+                <tr>
+                    <th class="py-3">製番WBS</th>
+                    <th class="py-3">受注WBS</th>
+                    <th class="py-3">機種</th>
+                    <th class="py-3">納入先</th>
+                    <th class="py-3">プロセス</th>
+                    <th class="py-3">工程選択</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each machine}}
+                    <tr class="table-active" style="vertical-align: middle;">
+                        <td>{{machineID}}</td>
+                        <td>{{lotID}}</td>
+                        <td>{{machineType}}</td>
+                        <td>{{customer}}</td>
+                        <td class="text-danger">{{process}}%</td>
+                        <td><a class="btn btn-outline-warning" href="/machine/unique/{{_id}}">工程選択</a></td>
+                    </tr>
+                {{/each}}
+        </table>
+    </div>
+
 </div>

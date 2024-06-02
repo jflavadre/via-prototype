@@ -9,8 +9,8 @@ export const getProfile = async (req, res) => {
 				.json({ message: "ユーザーが見つかりませんでした" });
 		}
 		//---- グローバル変数"user"を作成する
-		res.locals.user = userFound;
-
+		res.locals.user = req.user;
+		console.log("profile a ver que tiene:", req.user)
 		res.render("user/profile");
 	} catch (error) {
 		console.log(error.message);

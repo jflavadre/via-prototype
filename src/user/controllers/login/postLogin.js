@@ -21,8 +21,18 @@ export const postLogin = async (req, res) => {
 			);
 			return res.redirect("/?ログイン認証ができませんでした");
 		}
+
+		let level3;
+		if (userFound.level === 3) {
+			level3 = true;
+		}
+
 		//-----------------TOKENを生成
-		const token = await createAccessToken({ id: userFound._id });
+		const token = await createAccessToken({
+			id: userFound._id,
+			firstName: userFound.firstName,
+			level3,
+		});
 
 		res.cookie("token", token);
 		return res.redirect("/user/profile");
