@@ -12,6 +12,7 @@ export const postRegister = async (req, res) => {
 		});
 		//Machine　をデータベースに保存
 		const machineSaved = await newMachine.save();
+		res.locals.user = req.user;
 
 		res.render("machine/registered", { machineSaved });
 	} catch (error) {

@@ -47,7 +47,7 @@ app.use("/machine", machineRoutes);
 
 // Test version
 app.use("/probandoversion", (req, res) => {
-	return res.json({ message: "probando la web" });
+	return res.json({ message: "cambiando el machine" });
 });
 
 // Global Variables
