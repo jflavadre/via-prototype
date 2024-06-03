@@ -1,4 +1,4 @@
-import Machine from "../../models/machineModel.js";
+import Machine from "../../models/machineModels.js";
 
 export const postRegister = async (req, res) => {
 	try {

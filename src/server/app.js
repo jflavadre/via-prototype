@@ -1,20 +1,26 @@
 import express, { urlencoded } from "express";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
+
 //---- Handlerbars関係
 import Handlebars from "handlebars";
 import { engine } from "express-handlebars";
 import { allowInsecurePrototypeAccess } from "@handlebars/allow-prototype-access";
+//---- handlebars herlpersをインポート
+import * as hbs_helpers from "../helpers/hbs_helpers.js";
+
 //---- __dirname関係
 import { __viewsPath, __publicPath } from "../utils/pathThings.js";
+
 //---- .env関係
 import "dotenv/config";
 
-// routes関係をインポート
-import homeRoutes from "../home/routes/index.js";
-import userRoutes from "../user/routes/index.js";
-import machineRoutes from "../machine/routes/machineRoute.js";
+//---- routes関係をインポート
+import homeRoutes from "../home/routes/homeRoutes.js";
+import userRoutes from "../user/routes/userRoutes.js";
+import machineRoutes from "../machine/routes/machineRoutes.js";
 
+//---- アプリを起動する
 const app = express();
 
 // ログ表示
@@ -32,6 +38,7 @@ app.engine(
 	engine({
 		extname: ".hbs",
 		handlebars: allowInsecurePrototypeAccess(Handlebars),
+		helpers: hbs_helpers,
 	})
 );
 app.set("view engine", ".hbs");
@@ -48,12 +55,6 @@ app.use("/machine", machineRoutes);
 // Test version
 app.use("/probandoversion", (req, res) => {
 	return res.json({ message: "cambiando el machine register" });
-});
-
-// Global Variables
-app.use((req, res, next) => {
-	console.log("-- Global Variables --");
-	next();
 });
 
 export default app;

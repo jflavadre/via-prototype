@@ -1,4 +1,4 @@
-import Machine from "../../models/machineModel.js";
+import Machine from "../../models/machineModels.js";
 
 export const getSearch = async (req, res) => {
 	try {
