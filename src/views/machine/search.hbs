@@ -17,19 +17,19 @@
                     <th class="py-3">受注WBS</th>
                     <th class="py-3">機種</th>
                     <th class="py-3">納入先</th>
-                    <th class="py-3">プロセス</th>
+                    <th class="py-3 text-nowrap">プロセス</th>
                     <th class="py-3">工程選択</th>
                 </tr>
             </thead>
             <tbody>
                 {{#each machine}}
                     <tr class="table-active" style="vertical-align: middle;">
-                        <td>{{machineID}}</td>
-                        <td>{{lotID}}</td>
-                        <td>{{machineType}}</td>
-                        <td>{{customer}}</td>
+                        <td class="text-nowrap">{{machineID}}</td>
+                        <td class="text-nowrap">{{lotID}}</td>
+                        <td class="text-nowrap">{{machineType}}</td>
+                        <td class="text-nowrap">{{customer}}</td>
                         <td class="text-danger">{{process}}%</td>
-                        <td><a class="btn btn-outline-warning" href="/machine/unique/{{_id}}">工程選択</a></td>
+                        <td><a class="btn btn-outline-warning text-nowrap" href="/machine/unique/process/all/{{_id}}">工程選択</a></td>
                     </tr>
                 {{/each}}
         </table>
