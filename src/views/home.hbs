@@ -1,6 +1,8 @@
 <div class="container my-5">
-    {{#if badToken}}
-        <div class="text-center text-danger">トークンに問題があります</div>
+    {{#if alertMessage}}
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>{{alertMessage}}
+        </div>
     {{/if}}
     <div class="row">
         <div class="d-none d-sm-block col-md-2 col-lg-4"></div>

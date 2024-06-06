@@ -8,13 +8,20 @@ export const validateToken = async (req, res, next) => {
 	const { token } = req.cookies;
 	//-----------------トークンの確認
 	if (!token) {
-		return res.status(401).json({ message: "No token, authorization denied" });
+		console.log("No token...");
+		return res.render("home", {
+			alertMessage:
+				"認証を確認できませんでした、もう一度ログインしてください。",
+		});
 	}
 	//-----------------トークンの認証
 	await JWT.verify(token, jwtSecret, (err, decoded) => {
 		if (err) {
 			console.log(err.message);
-			return res.status(401).json({ message: "Token is not valid" });
+			return res.render("home", {
+				alertMessage:
+					"認証の有効期限が切れました、もう一度ログインしてください。",
+			});
 		}
 		//-- req.userにdecodedのデータを保存
 		req.user = decoded;

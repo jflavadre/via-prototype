@@ -19,6 +19,7 @@ import "dotenv/config";
 import homeRoutes from "../home/routes/homeRoutes.js";
 import userRoutes from "../user/routes/userRoutes.js";
 import machineRoutes from "../machine/routes/machineRoutes.js";
+import processRoutes from "../process/routes/processRoutes.js";
 
 //---- アプリを起動する
 const app = express();
@@ -51,6 +52,7 @@ app.use(express.static(__publicPath));
 app.use("/", homeRoutes);
 app.use("/user", userRoutes);
 app.use("/machine", machineRoutes);
+app.use("/process", processRoutes);
 
 // Test version
 app.use("/probandoversion", (req, res) => {

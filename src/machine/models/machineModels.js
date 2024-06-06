@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema, isObjectIdOrHexString } from "mongoose";
 
 const machineSchema = new mongoose.Schema(
 	{
@@ -24,6 +24,13 @@ const machineSchema = new mongoose.Schema(
 			trim: true,
 		},
 		process: {
+			regulate02_id: { type: Schema.Types.ObjectId, default: null },
+			galvano_id: { type: Schema.Types.ObjectId, default: null },
+			regulate03_id: { type: Schema.Types.ObjectId, default: null },
+			regulate04_id: { type: Schema.Types.ObjectId, default: null },
+			bunkai_id: { type: Schema.Types.ObjectId, default: null },
+		},
+		progress: {
 			type: Number,
 			default: 0,
 		},

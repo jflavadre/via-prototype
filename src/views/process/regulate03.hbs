@@ -1,0 +1,199 @@
+<div class="container mt-4">
+    <div class="row border-bottom">
+        <div class="col fs-3">最終まとめ３</div>
+        <div class="col text-end align-self-end fst-italic fs-6">PC-1434-243</div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-2 my-4">
+        <div class="col">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col col-lg-5 p-3">
+                    <h6>機種:</h6>
+                    <h5 class="text-white d-inline-block">{{process.machineInfo.machineType}}</h5>
+                </div>
+                <div class="col  col-lg-7 p-3">
+                    <h6>納入先:</h6>
+                    <h5 class="text-white">{{process.machineInfo.customer}}</h5>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col col-lg-5 p-3">
+                    <h6>製番WBS:</h6>
+                    <h5 class="text-white">{{process.machineInfo.machineID}}</h5>
+                </div>
+                <div class="col col-lg-7 p-3">
+                    <h6>受注WBS:</h6>
+                    <h5 class="text-white">{{process.machineInfo.lotID}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col align-self-center">
+            <div class="row row-cols-1 row-cols-md-3 text-center g-3">
+                <div class="col">
+                    <h6 class="text-secondary">主任</h6>
+                    {{#if process.stamp.primaryBoss}}
+                        <div
+                            class="d-inline-block rounded-circle border border-danger text-center text-danger bg-white px-2 py-1">
+                            <div>製造部</div>
+                            <div class="border-top border-bottom border-2 border-danger">24/09/17</div>
+                            <div>黒羽根</div>
+                        </div>
+                    {{else}}
+                        <div class="border d-inline-block p-5"></div>
+                    {{/if}}
+                </div>
+                <div class="col">
+                    <h6 class="text-secondary">組長</h6>
+                    {{#if process.stamp.secondaryBoss}}
+                        <div
+                            class="d-inline-block rounded-circle border border-danger text-center text-danger bg-white px-2 py-1">
+                            <div>製造部</div>
+                            <div class="border-top border-bottom border-2 border-danger">24/09/17</div>
+                            <div>黒羽根</div>
+                        </div>
+                    {{else}}
+                        <div class="border d-inline-block p-5"></div>
+                    {{/if}}
+                </div>
+                <div class="col">
+                    <h6 class="text-secondary">検査員</h6>
+                    {{#if process.stamp.smallBoss}}
+                        <div
+                            class="d-inline-block rounded-circle border border-danger text-center text-danger bg-white px-2 py-1">
+                            <div>製造部</div>
+                            <div class="border-top border-bottom border-2 border-danger">24/09/17</div>
+                            <div>黒羽根</div>
+                        </div>
+                    {{else}}
+                        <div class="border d-inline-block p-5"></div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-2 border-top">
+        <div class="col col-lg-2 p-3">
+            パワー測定方法:
+        </div>
+        <div class="col col-lg-10 p-3">
+            <p><small>1. P-CHK</small></p>
+            <p><small>2. モードはPCフォームに順子準拠。不明時は基準APでの測定とする。</small></p>
+            <p><small>3. レーザ発射1分後よりデータ採取を開始し、1分間の平均値をデータとする。（パワー変動は10%以下）</small></p>
+            <p class="ps-3"><small><span
+                        class="border-bottom">但し、100w以上の測定はウォームアップ無しの1分間とする。</span>（パワーメータ加熱防止、但しLM-1000等水冷式は除く）</small>
+            </p>
+        </div>
+    </div>
+    <div class="row table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center text-nowrap">
+                    <th style="width: 50px;">No.</th>
+                    <th style="width: 80px;">区分</th>
+                    <th>実施項目</th>
+                    <th style="width: 150px;">許容値</th>
+                    <th style="width: 100px;">測定値確認</th>
+                    <th style="width: 100px;">月日</th>
+                    <th style="width: 100px;">氏名</th>
+                    <th style="width: 100px;">編集</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-light text-center text-nowrap text-info" style="vertical-align: middle;">
+                    <td>1</td>
+                    <td>加工前調整</td>
+                    <td class="text-start p-3">
+                        2次結調整が完了していることを確認し、PRMを保存<br>
+                        保存名: C81フォルダー_2次結調フォルダ作成_2JI〜を付けて保存<br>
+                        ★未完了時は結調員へ依頼し工程調整する
+                    </td>
+                    <td>保存</td>
+                    <td><span class="badge rounded-pill bg-dark p-2">OK</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">6/12</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">ティン</span></td>
+                    <td><a class="btn btn-outline-dark p-2" href="#">入力</a></td>
+                </tr>
+                <tr class="table-light text-center text-nowrap text-info" style="vertical-align: middle;">
+                    <td>2</td>
+                    <td>"</td>
+                    <td class="text-start p-3">
+                        高さ検出装置のストローク範囲調整<br>
+                        N644 S0/S1
+                    </td>
+                    <td>1mm幅<br>マージン0.2mm以上</td>
+                    <td><span class="badge rounded-pill bg-dark p-2">OK</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">6/13</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">西嶋</span></td>
+                    <td><a class="btn btn-outline-dark p-2" href="#">入力</a></td>
+                </tr>
+                <tr class="table-light text-center text-nowrap text-info" style="vertical-align: middle;">
+                    <td>3</td>
+                    <td>"</td>
+                    <td class="text-start p-3">
+                        カメラ位置調整 (N3500 N3501→S0(Z1) 対 S1(Z2)〜)
+                    </td>
+                    <td>30μm以内</td>
+                    <td><span class="badge rounded-pill bg-dark p-2">OK</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">6/13</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">西嶋</span></td>
+                    <td><a class="btn btn-outline-dark p-2" href="#">入力</a></td>
+                </tr>
+                <tr class="table-light text-center text-nowrap text-info" style="vertical-align: middle;">
+                    <td>4</td>
+                    <td>"</td>
+                    <td class="text-start p-3">
+                        ガルバの補正 (CHK1/CHK9)
+                    </td>
+                    <td>実施確認</td>
+                    <td><span class="badge rounded-pill bg-dark p-2">OK</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">6/15</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">クアン</span></td>
+                    <td><a class="btn btn-outline-dark p-2" href="#">入力</a></td>
+                </tr>
+                <tr class="table-light text-center text-nowrap text-info" style="vertical-align: middle;">
+                    <td>5</td>
+                    <td>"</td>
+                    <td class="text-start p-3">
+                        <div class="row">
+                            <div class="col">
+                                高精度ガルバノ補正
+                            </div>
+                            <div class="col">
+                                <div class="border-bottom d-block">□ Fθ"2.75 □ Fθ"3.0 (Rmax0.010以内を目標)</div>
+                                <div class="border-bottom d-block">□ Fθ"3.5</div>
+                                <div class="border-bottom d-block">□ Fθ"5.0</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="border-bottom d-block">RMAX0.015以内</div>
+                        <div class="border-bottom d-block">RMAX0.020以内</div>
+                        <div class="border-bottom d-block">RMAX0.025以内</div>
+                    </td>
+                    <td><span class="badge rounded-pill bg-dark p-2">OK</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">6/15</span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2">クアン</span></td>
+                    <td><a class="btn btn-outline-dark p-2" href="#">入力</a></td>
+                </tr>
+                <tr class="table-light text-center text-nowrap text-info" style="vertical-align: middle;">
+                    <td>6</td>
+                    <td>"</td>
+                    <td class="text-start p-3">
+                        <div class="row">
+                            <div class="col-4">
+                                GCOMP精度確認
+                            </div>
+                            <div class="col">□ AP<br>□ AP</div>
+                            <div class="col">□ AP<br>□ AP</div>
+                            <div class="col">□ AP<br>□ AP</div>
+                        </div>
+                    </td>
+                    <td>10μm以内</td>
+                    <td><span class="badge rounded-pill bg-dark p-2"></td>
+                    <td><span class="badge rounded-pill bg-dark p-2"></span></td>
+                    <td><span class="badge rounded-pill bg-dark p-2"></span></td>
+                    <td><a class="btn btn-outline-dark p-2" href="#">入力</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
