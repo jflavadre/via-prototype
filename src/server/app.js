@@ -1,6 +1,7 @@
 import express, { urlencoded } from "express";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
+import methodOverride from "method-override";
 
 //---- Handlerbars関係
 import Handlebars from "handlebars";
@@ -30,6 +31,8 @@ app.use(morgan("dev"));
 // jsonの使用
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
+// methodOverrideを使用
+app.use(methodOverride("_method"));
 //---- クッキーを使用する
 app.use(cookieParser());
 

@@ -9,7 +9,10 @@ export const getMachine = async (req, res) => {
 		//---- Global "machine"
 		res.locals.machine = machineFounded;
 
-		res.render("process/machine");
+		res.render("process/machine", {
+			updateMessage: req.query.updateMessage,
+			message: "作業データを更新しました！",
+		});
 	} catch (error) {
 		return console.log(error.message);
 	}

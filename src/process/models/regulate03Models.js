@@ -40,21 +40,12 @@ const regulate03Schema = new mongoose.Schema(
 				default: null,
 			},
 		},
-		process01: [
-			{ type: String },
-			{ type: String },
-			{ type: Boolean, default: false },
-		],
-		process02: {
-			who: { type: String },
-			when: { type: String },
-			finished: { type: Boolean, default: false },
-		},
-		process03: {
-			who: { type: String },
-			when: { type: String },
-			finished: { type: Boolean, default: false },
-		},
+		process01: [],
+		process02: [],
+		process03: [],
+		process04: [],
+		process05: [],
+		process06: [],
 	},
 	{
 		timestamps: true,
