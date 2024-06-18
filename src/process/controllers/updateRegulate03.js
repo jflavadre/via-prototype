@@ -52,7 +52,12 @@ export const putRegulate03 = async (req, res) => {
 				process06: finishedArray,
 			});
 		}
-		return res.redirect(`/process/machine/${machineData.machine_id}?updateMessage=true`);
+		res.locals.machine = machineData.machineInfo;
+		return res.render(`process/processUpdated`, {
+			updateMessage: true,
+			message: "メンテナンス作業の項目を更新しました。",
+			regulate03_id: req.params.id,
+		});
 		return console.log(req.query);
 		//---- 新しい機械を作成
 		const newMachine = new Machine({

@@ -10,8 +10,6 @@ export const getRegulate03 = async (req, res) => {
 		//---- Global "process"
 		res.locals.process = processFounded;
 
-		console.log("これ", processFounded);
-
 		res.render("process/regulate03");
 	} catch (error) {
 		return console.log(error.message);

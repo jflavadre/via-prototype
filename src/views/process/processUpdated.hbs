@@ -1,0 +1,44 @@
+<div class="container m-5">
+    {{#if updateMessage}}
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>{{message}}
+        </div>
+    {{/if}}
+    <div class="row row-cols-4 text-center">
+        <div class="col p-3">
+            <h6>機種:</h6>
+            <h5 class="text-white d-inline-block">{{machine.machineType}}</h5>
+        </div>
+        <div class="col p-3">
+            <h6>納入先:</h6>
+            <h5 class="text-white">{{machine.customer}}</h5>
+        </div>
+        <div class="col p-3">
+            <h6>製番WBS:</h6>
+            <h5 class="text-white">{{machine.machineID}}</h5>
+        </div>
+        <div class="col p-3">
+            <h6>受注WBS:</h6>
+            <h5 class="text-white">{{machine.lotID}}</h5>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col py-5 mx-auto" style="max-width: 400px;">
+            <a class="d-block btn btn-outline-warning"
+                href="/process/singular/regulate03/{{regulate03_id}}">メンテナンス</a>
+        </div>
+        {{!-- <div class="col p-3">
+                    <a class="d-block btn btn-outline-warning"
+                        href="/process/singular/regulate03/{{machine.process.regulate03_id}}">最終まとめ3</a>
+                </div>
+                <div class="col p-3">
+                    <a class="d-block btn btn-outline-warning" href="#">最終まとめ4</a>
+                </div>
+                <div class="col p-3">
+                    <a class="d-block btn btn-outline-warning" href="#">検査</a>
+                </div>
+                <div class="col p-3">
+                    <a class="d-block btn btn-outline-warning" href="#">分解</a>
+                </div> --}}
+    </div>
+</div>

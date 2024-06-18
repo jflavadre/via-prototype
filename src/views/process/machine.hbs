@@ -1,9 +1,4 @@
 <div class="container mt-4">
-    {{#if updateMessage}}
-        <div class="alert alert-dismissible alert-success">
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>{{message}}
-        </div>
-    {{/if}}
     <div class="fs-1 text-center border-bottom">作業工程</div>
     <div class="row row-cols-1 row-cols-lg-2 my-4">
         <div class="col align-self-center">
@@ -29,34 +24,34 @@
         <div class="col">
             <div class="row row-cols-2 row-cols-sm-3">
                 <div class="col p-3">
-                    <a class="d-block btn btn-outline-warning" href="#">セットアップ</a>
+                    <a class="d-block btn btn-outline-warning" href="#">プレス</a>
                 </div>
                 <div class="col p-3">
-                    <a class="d-block btn btn-outline-warning" href="#">中間組立2</a>
+                    <a class="d-block btn btn-outline-warning" href="#">溶接</a>
                 </div>
                 <div class="col p-3">
-                    <a class="d-block btn btn-outline-warning" href="#">盤配線</a>
+                    <a class="d-block btn btn-outline-warning" href="#">塗装</a>
                 </div>
                 <div class="col p-3">
-                    <a class="d-block btn btn-outline-warning" href="#">結調1次</a>
+                    <a class="d-block btn btn-outline-warning" href="#">エンジン製造</a>
                 </div>
                 <div class="col p-3">
-                    <a class="d-block btn btn-outline-warning" href="#">最終まとめ1</a>
+                    <a class="d-block btn btn-outline-warning" href="#">組立</a>
                 </div>
                 <div class="col p-3">
-                    <a class="d-block btn btn-outline-warning" href="#">最終まとめ2</a>
+                    <a class="d-block btn btn-outline-warning" href="#">検査</a>
                 </div>
                 <div class="col p-3">
-                    <a class="d-block btn btn-outline-warning" href="#">GR取付</a>
+                    <a class="d-block btn btn-outline-warning" href="#">出荷</a>
                 </div>
                 <div class="col p-3">
-                    <a class="d-block btn btn-outline-warning" href="#">結調2次</a>
+                    <a class="d-block btn btn-outline-warning" href="#">販売</a>
                 </div>
                 <div class="col p-3">
                     <a class="d-block btn btn-outline-warning"
-                        href="/process/singular/regulate03/{{machine.process.regulate03_id}}">GR調整</a>
+                        href="/process/singular/regulate03/{{machine.process.regulate03_id}}">メンテナンス</a>
                 </div>
-                <div class="col p-3">
+                {{!-- <div class="col p-3">
                     <a class="d-block btn btn-outline-warning"
                         href="/process/singular/regulate03/{{machine.process.regulate03_id}}">最終まとめ3</a>
                 </div>
@@ -68,7 +63,7 @@
                 </div>
                 <div class="col p-3">
                     <a class="d-block btn btn-outline-warning" href="#">分解</a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

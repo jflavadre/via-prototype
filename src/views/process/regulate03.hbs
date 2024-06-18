@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <div class="row border-bottom">
-        <div class="col fs-3">最終まとめ３</div>
+        <div class="col fs-3">メンテナンス</div>
         <div class="col text-end align-self-end fst-italic fs-6">PC-1434-243</div>
     </div>
     <div class="row row-cols-1 row-cols-lg-2 my-4">
@@ -105,11 +105,15 @@
                 {{!-- Process Number 01 --}}
                 <tr class="table-light text-center text-nowrap" style="vertical-align: middle;">
                     <td>1</td>
-                    <td>加工前調整</td>
+                    <td>ブレーキ</td>
+                    {{!-- <td>加工前調整</td> --}}
                     <td class="text-start p-3">
-                        2次結調整が完了していることを確認し、PRMを保存<br>
+                        ブレーキ・ペダルの踏みしろが適当で、ブレーキの効きが十分であること。<br>
+                        ブレーキ・チャンバのロッドのストロークが適当であること<br>
+                        ブレーキ・ドラムとライニングとのすき間が適当であること
+                        {{!-- 2次結調整が完了していることを確認し、PRMを保存<br>
                         保存名: C81フォルダー_2次結調フォルダ作成_2JI〜を付けて保存<br>
-                        ★未完了時は結調員へ依頼し工程調整する
+                        ★未完了時は結調員へ依頼し工程調整する --}}
                     </td>
                     <td>保存</td>
                     <td>{{#if process.process01.[0]}}OK{{/if}}</td>
@@ -145,10 +149,12 @@
                 {{!-- process number 02 --}}
                 <tr class="table-light text-center text-nowrap text-info" style="vertical-align: middle;">
                     <td>2</td>
-                    <td>"</td>
+                    <td>タイヤ</td>
+                    {{!-- <td>"</td> --}}
                     <td class="text-start p-3">
-                        高さ検出装置のストローク範囲調整<br>
-                        N644 S0/S1
+                        タイヤの空気圧が適当であること。（含むスペア・タイヤ）
+                        {{!-- 高さ検出装置のストローク範囲調整<br>
+                        N644 S0/S1 --}}
                     </td>
                     <td>1mm幅<br>マージン0.2mm以上</td>
                     <td>{{#if process.process02.[0]}}OK{{/if}}</td>
@@ -177,8 +183,8 @@
                         2
                     </td>
                     <td colspan="8" class="collapse bg-white p-3 text-danger" id="processNumber02">
-                        Z1軸のみやりました! Z2は高さ検出装置にトラブルがあり、 あと回しにします。
-                        そのままZ1軸のみで作業を続けてください。
+                        走行前にタイヤの残り溝をチェックしましょう。残り溝が1.6ミリになる目安としてスリップサインを設けています。<br>
+                        スリップサインが1箇所でも出ると使用してはいけないことが法律で定められています。
 
                     </td>
                 </tr>
@@ -186,9 +192,10 @@
                 {{!-- process number 03 --}}
                 <tr class="table-light text-center text-nowrap text-info" style="vertical-align: middle;">
                     <td>3</td>
-                    <td>"</td>
+                    <td>バッテリ</td>
                     <td class="text-start p-3">
-                        カメラ位置調整 (N3500 N3501→S0(Z1) 対 S1(Z2)〜)
+                        液量が適当であること
+                        {{!-- カメラ位置調整 (N3500 N3501→S0(Z1) 対 S1(Z2)〜) --}}
                     </td>
                     <td>30μm以内</td>
                     <td>{{#if process.process03.[0]}}OK{{/if}}</td>
@@ -218,9 +225,11 @@
                 {{!-- process number 04 --}}
                 <tr class="table-light text-center text-nowrap text-info" style="vertical-align: middle;">
                     <td>4</td>
-                    <td>"</td>
+                    <td>原動機</td>
                     <td class="text-start p-3">
-                        ガルバの補正 (CHK1/CHK9)
+                        ファン・ベルトの張り具合が適当であること。<br>
+                        ファン・ベルトに損傷がないこと。
+                        {{!-- ガルバの補正 (CHK1/CHK9) --}}
                     </td>
                     <td>実施確認</td>
                     <td>{{#if process.process04.[0]}}OK{{/if}}</td>
@@ -252,8 +261,10 @@
                     <td>5</td>
                     <td>"</td>
                     <td class="text-start p-3">
-                        <div class="row">
+                        エンジン・オイルの量が適当であること。
+                        {{!-- <div class="row">
                             <div class="col">
+
                                 高精度ガルバノ補正
                             </div>
                             <div class="col">
@@ -261,7 +272,7 @@
                                 <div class="border-bottom d-block">□ Fθ"3.5</div>
                                 <div class="border-bottom d-block">□ Fθ"5.0</div>
                             </div>
-                        </div>
+                        </div> --}}
                     </td>
                     <td>
                         <div class="border-bottom d-block">RMAX0.015以内</div>
@@ -297,14 +308,15 @@
                     <td>6</td>
                     <td>"</td>
                     <td class="text-start p-3">
-                        <div class="row">
+                        エア・タンクに凝水がないこと。
+                        {{!-- <div class="row">
                             <div class="col-4">
                                 GCOMP精度確認
                             </div>
                             <div class="col">□ AP<br>□ AP</div>
                             <div class="col">□ AP<br>□ AP</div>
                             <div class="col">□ AP<br>□ AP</div>
-                        </div>
+                        </div> --}}
                     </td>
                     <td>10μm以内</td>
                     <td>{{#if process.process06.[0]}}OK{{/if}}</td>
